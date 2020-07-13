@@ -1,0 +1,280 @@
+/*Geral e global*/
+:root{
+    --cor-principal: #f18035;
+    --cor-secundaria: #fa9653;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;    
+}
+
+body, input, button, textarea{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+#root{
+    background-color: var(--cor-secundaria);
+    justify-content: center;
+    align-items: center;
+    padding: 16px;    
+}
+
+main{
+    background-color: snow;
+    padding: 16px;    
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+main h1{
+    text-align: center;
+}
+
+main h2{
+    margin-bottom: 8px;
+    text-align: center;
+    color: #444
+}
+
+.btn-1{
+    border: 0;
+    height: 32px;
+    background-color: var(--cor-principal);
+    border-radius: 2px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: snow;
+    transition: 0.25s;    
+}
+
+.btn-1:hover{
+    background-color: rgb(238, 111, 97);
+    transition: 0.25s;
+}
+
+.btn-link-2{
+    margin-top: 16px;
+}
+
+.btn-link-2 button{
+    border: 0;
+    height: 30px;
+    border: solid 1px var(--cor-principal);    
+    border-radius: 2px;    
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--cor-principal);
+    transition: 0.25s;
+    width: 100%;
+}
+
+.btn-link-2 button:hover{
+    background-color: rgb(255, 230, 230);    
+    transition: 0.25s;
+}
+
+/*Formulario*/
+form{
+    display: flex;
+    flex-direction: column;    
+}
+
+form label{
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+form input{    
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 8px;
+    background-color: snow;
+    padding: 4px;
+    border: 0;
+    border-bottom: solid 1px #CCC;
+    font-weight: bold;    
+    border-radius: 0;
+}
+
+/*Login*/
+main#login{
+    max-width: 400px;
+}
+
+/*Notas*/
+#notas{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    height: 100%;    
+    min-width: 600px;
+}
+
+/*Notas - menu lateral*/
+#notas aside{
+    display: flex;
+    flex-direction: column;                
+    padding-right: 8px;
+    height: 100%;
+    width: 10%;        
+    min-width: 200px;
+    margin-right: 16px;
+    border-right: solid 1px #ccc;    
+}
+
+#notas aside ul {  
+    margin-top: 16px;          
+    overflow-y: auto;
+    padding-right: 8px;
+    flex: 1;
+}
+
+#notas aside ul li{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4px;    
+}
+
+#notas aside ul li div{        
+    cursor: pointer;
+    padding: 8px;
+    transition: 0.25s;
+    margin-right: auto;
+}
+
+#notas aside ul li div:hover {
+    background-color: rgb(255, 201, 195);
+}
+
+#notas aside ul li div p:first-child {
+    font-weight: bold;
+}
+
+#notas aside ul li div p:last-child {
+    color: #444;
+    font-size: 14px;
+}
+
+#notas aside ul li button{
+    border: 0;    
+    border: solid 1px var(--cor-principal);    
+    border-radius: 2px;    
+    cursor: pointer;        
+    color: var(--cor-principal);
+    transition: 0.25s;
+    background-color: snow;    
+}
+
+#notas aside ul li button svg{    
+    margin-right: 2px;
+    margin-left: 2px;
+    font-size: 1.2em;    
+}
+
+#notas aside ul li button:hover{
+    background-color: rgb(255, 230, 230);    
+    transition: 0.25s;
+}
+
+#notas aside .btn-1 {
+    padding: 8px 0;    
+}
+
+/*Notas - nota selecionada*/
+#notas form {
+    display: flex;
+    flex-direction: column;      
+    width: 90%;
+}
+
+#notas form input {
+    font-family: 'Ubuntu';
+    font-size: 24px;    
+}
+
+#notas form textarea{
+    resize: none;
+    flex: 1;    
+    border: solid 1px #ccc;
+    font-size: 22px;
+    color: #444;    
+    padding: 8px;
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.10);
+}
+
+/*Spinner de loading*/
+#spinner{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/**barra rolagem*/
+::-webkit-scrollbar {
+    width: 5%;
+    height: 1%;  
+}
+
+textarea::-webkit-scrollbar {
+    width: 1%;
+    height: 1%;  
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(255, 228, 228, 0);   
+}
+
+::-webkit-scrollbar-thumb:vertical {    
+    background-color: var(--cor-principal);          
+}
+
+::-webkit-scrollbar-thumb:horizontal {    
+    background-color: rgba(28, 25, 36, 0);        
+}
+
+/*Animacao de loading*/
+@media (prefers-reduced-motion: no-preference) {
+    #spinner svg{
+      animation: spinner-animation infinite 0.5s alternate;
+    }
+}
+
+@keyframes spinner-animation {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(3);
+    }
+}
