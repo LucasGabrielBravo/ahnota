@@ -221,10 +221,10 @@ main#login{
     resize: none;
     flex: 1;    
     border: solid 1px #ccc;
-    font-size: 22px;
+    font-size: 50px;
     color: #444;    
     padding: 8px;
-    font-family: 'Fira-code';
+    font-family: 'Fira Code';
     box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.10);
 }
 
