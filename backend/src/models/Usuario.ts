@@ -1,3 +1,4 @@
+require('dotenv').config();
 /*
 mongoose  -> Para manipular o banco e exportar o model
 Document  -> Para criar uma interface extendida de document
@@ -51,7 +52,7 @@ UsuarioSchema.pre<IUsuario>('save', async function (next) {
 UsuarioSchema.methods = <IUsuario> {
   //Gera um token usando jwt criptografando um json com o id do registro e a palavra "a1b2c3" como chave de criacao
   generateToken() {
-    return jwt.sign({ id: this.id }, "a1b2c3", {
+    return jwt.sign({ id: this.id }, String(process.env.SEED_TOKEN), {
       expiresIn: 86400
     });
   },

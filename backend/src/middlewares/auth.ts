@@ -1,3 +1,4 @@
+require('dotenv').config();                 //Usar variaveis globais
 import jwt from 'jsonwebtoken';             //Para decodificar o token
 import { Request, Response, NextFunction } from 'express';
 //import { promisify } from 'util';
@@ -14,8 +15,8 @@ export default (req: Request, res: Response, next: NextFunction) => {
     const [pre, token] = authorization.split(" ");
 
     try {
-        //Decodifica o token usando a chave
-        const decoded = <{id: string}> jwt.verify(token, "a1b2c3");
+        //Decodifica o token usando o SEED_TOKEN como chave de criacao
+        const decoded = <{id: string}> jwt.verify(token, String(process.env.SEED_TOKEN));
 
         //Adiciona o ID decodificado as requisicoes
         req.userId = decoded.id;          
